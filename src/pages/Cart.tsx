@@ -34,7 +34,7 @@ const Cart = () => {
         <div className="w-full lg:w-3/4">
           <div className="rounded-lg border border-gray-200 bg-white p-6">
             {/* <!-- Single Cart Item --> */}
-            {cart.map(({ id, image, price, title, shoppingId }) => (
+            {cart.map(({ image, price, title, shoppingId }) => (
               <div
                 key={shoppingId}
                 className="mb-4 flex items-center justify-between border-b pb-4"
