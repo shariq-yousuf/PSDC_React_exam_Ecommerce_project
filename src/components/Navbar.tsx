@@ -1,7 +1,14 @@
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { RootState } from "../store/store";
+
 const Navbar = () => {
+  const navigate = useNavigate();
+  const cart = useSelector((state: RootState) => state.cart.cart);
+
   const logOut = () => {
     localStorage.clear();
-    window.location.reload();
+    navigate("/");
   };
 
   return (
@@ -27,26 +34,25 @@ const Navbar = () => {
       </div>
       <div className="block w-full flex-grow lg:flex lg:w-auto lg:items-center">
         <div className="text-sm lg:flex-grow">
-          <a
-            href="#"
+          <Link
+            to={"/"}
             className="mr-4 mt-4 block text-gray-300 hover:text-white lg:mt-0 lg:inline-block"
           >
-            Docs
-          </a>
-          <a
-            href="#"
-            className="mr-4 mt-4 block text-gray-300 hover:text-white lg:mt-0 lg:inline-block"
-          >
-            Examples
-          </a>
-          <a
-            href="#"
-            className="mt-4 block text-gray-300 hover:text-white lg:mt-0 lg:inline-block"
-          >
-            Blog
-          </a>
+            Shop
+          </Link>
         </div>
         <div>
+          <Link
+            to={"/cart"}
+            className="mt-4 me-4 inline-block rounded border border-gray-400 px-4 py-2 text-sm leading-none text-gray-300 hover:bg-gray-300 hover:text-gray-800 lg:mt-0"
+          >
+            Cart
+            {cart.length > 0 && (
+              <span className="text-white bg-red-400 rounded-lg  ms-2 p-1">
+                {cart.length}
+              </span>
+            )}
+          </Link>
           <button
             className="mt-4 inline-block rounded border border-gray-400 px-4 py-2 text-sm leading-none text-gray-300 hover:bg-gray-300 hover:text-gray-800 lg:mt-0"
             onClick={logOut}

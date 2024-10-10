@@ -7,6 +7,9 @@ import Home from "./pages/Home.tsx";
 import ProductDetails from "./pages/ProductDetails.tsx";
 import Signup from "./pages/Signup.tsx";
 import ProtectedRoutes from "./components/ProtectedRoutes.tsx";
+import { Provider } from "react-redux";
+import { store } from "./store/store.ts";
+import Cart from "./pages/Cart.tsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +32,14 @@ const router = createBrowserRouter([
           </ProtectedRoutes>
         ),
       },
+      {
+        path: "/cart",
+        element: (
+          <ProtectedRoutes>
+            <Cart />
+          </ProtectedRoutes>
+        ),
+      },
     ],
   },
   {
@@ -39,6 +50,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>
 );

@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import API_URL from "../config/api";
 import { useParams } from "react-router-dom";
+import { Product } from "../config/types";
+import { useDispatch } from "react-redux";
+import { nanoid } from "nanoid";
+import { addCost } from "../slices/costSlice";
+import { addToCart } from "../slices/cartSlice";
 
 const ProductDetails = () => {
   const { productId } = useParams();
-  const [product, setProduct] = useState({
+  const [product, setProduct] = useState<Product>({
     id: 0,
     title: "",
     price: 0,
@@ -13,6 +18,7 @@ const ProductDetails = () => {
     image: "",
   });
   const { title, image, price, description, category } = product;
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getData();
@@ -22,6 +28,16 @@ const ProductDetails = () => {
     const response = await fetch(`${API_URL}/${productId}`);
     const data = await response.json();
     setProduct(data);
+  };
+
+  const addProductToCart = () => {
+    const productWithShoppingId = {
+      ...product,
+      shoppingId: nanoid(),
+    };
+
+    dispatch(addCost(product.price));
+    dispatch(addToCart(productWithShoppingId));
   };
 
   return (
@@ -46,7 +62,10 @@ const ProductDetails = () => {
           <p className="mb-6 text-2xl font-semibold text-gray-800">${price}</p>
 
           {/* <!-- Buy Now Button --> */}
-          <button className="w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+          <button
+            onClick={addProductToCart}
+            className="w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+          >
             Add to Cart
           </button>
         </div>
