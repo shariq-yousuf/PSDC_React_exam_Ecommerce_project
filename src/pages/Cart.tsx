@@ -36,7 +36,7 @@ const Cart = () => {
             {/* <!-- Single Cart Item --> */}
             {cart.map(({ id, image, price, title, shoppingId }) => (
               <div
-                key={id}
+                key={shoppingId}
                 className="mb-4 flex items-center justify-between border-b pb-4"
               >
                 <div className="flex items-center space-x-4">

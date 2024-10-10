@@ -1,5 +1,5 @@
-import { ChangeEvent, FormEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { ChangeEvent, FormEvent, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -7,27 +7,27 @@ const Signup = () => {
     email: "",
     password: "",
     confirmPassword: "",
-  });
-  const { name, email, password, confirmPassword } = formData;
-  const navigate = useNavigate();
+  })
+  const { name, email, password, confirmPassword } = formData
+  const navigate = useNavigate()
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
 
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }));
-  };
+    }))
+  }
 
   const createUser = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (password === confirmPassword) {
-      localStorage.setItem("token", "true");
-      navigate("/");
+      localStorage.setItem("token", "true")
+      navigate("/")
     }
-  };
+  }
 
   return (
     <div className="flex min-h-screen">
@@ -36,7 +36,7 @@ const Signup = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
             className="mx-auto h-10 w-auto"
-            src="https://baitussalam.org/images/logo-2.svg"
+            src="/react.svg"
             alt="Your Company"
           />
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
@@ -185,7 +185,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup

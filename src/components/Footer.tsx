@@ -11,10 +11,10 @@ const Footer = () => {
               alt="Logo"
               //   style="color: transparent"
               width="50"
-              src="https://baitussalam.org/images/logo-2.svg"
+              src="/react.svg"
             />
             <span className="text-3xl font-semibold tracking-wider">
-              Bait-us-Salam
+              Ecommerce Store
             </span>
           </a>
           <p className="max-w-xl text-center text-lg font-medium text-white">
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

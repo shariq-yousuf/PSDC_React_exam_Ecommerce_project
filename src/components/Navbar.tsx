@@ -17,11 +17,11 @@ const Navbar = () => {
       <div className="mr-6 flex flex-shrink-0 items-center text-white">
         <img
           className="mx-auto h-10 w-auto"
-          src="https://baitussalam.org/images/logo-2.svg"
+          src="/react.svg"
           alt="Your Company"
         />
       </div>
-      <div className="block lg:hidden">
+      <div className="block md:hidden">
         <button className="flex items-center rounded border border-gray-500 px-3 py-2 text-gray-400 hover:border-white hover:text-white">
           <svg
             className="h-3 w-3 fill-current"
@@ -33,11 +33,11 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
-      <div className="block w-full flex-grow lg:flex lg:w-auto lg:items-center">
-        <div className="text-sm lg:flex-grow">
+      <div className="w-full hidden flex-grow md:flex md:w-auto md:items-center">
+        <div className="text-sm md:flex-grow">
           <Link
             to={"/"}
-            className="mr-4 mt-4 block text-gray-300 hover:text-white lg:mt-0 lg:inline-block"
+            className="mr-4 mt-4 block text-white hover:text-gray-300 text-lg md:mt-0 md:inline-block"
           >
             Shop
           </Link>
@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link
             to={"/cart"}
-            className="me-4 flex items-center rounded border border-gray-400 px-4 text-sm leading-none text-gray-300 hover:bg-gray-300 hover:text-gray-800 lg:mt-0"
+            className="me-4 flex items-center rounded border border-gray-400 px-4 text-sm leading-none text-gray-300 hover:bg-gray-300 hover:text-gray-800"
           >
             <FaCartShopping className="my-2" />
             {cart.length > 0 && (
