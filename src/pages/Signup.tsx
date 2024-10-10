@@ -1,12 +1,32 @@
-import { FormEvent } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const { name, email, password, confirmPassword } = formData;
   const navigate = useNavigate();
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   const createUser = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    localStorage.setItem("token", "true");
-    navigate("/");
+
+    if (password === confirmPassword) {
+      localStorage.setItem("token", "true");
+      navigate("/");
+    }
   };
 
   return (
@@ -37,11 +57,12 @@ const Signup = () => {
               <div className="mt-1">
                 <input
                   id="name"
-                  name="name"
                   type="text"
-                  //   autocomplete="name"
                   required
                   className="block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  onChange={handleChange}
+                  name="name"
+                  value={name}
                 />
               </div>
             </div>
@@ -59,9 +80,10 @@ const Signup = () => {
                   id="email"
                   name="email"
                   type="email"
-                  //   autocomplete="email"
                   required
                   className="block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  onChange={handleChange}
+                  value={email}
                 />
               </div>
             </div>
@@ -79,9 +101,14 @@ const Signup = () => {
                   id="password"
                   name="password"
                   type="password"
-                  //   autocomplete="current-password"
                   required
-                  className="block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  className={`block w-full rounded-md border ${
+                    password !== confirmPassword
+                      ? "border-2 border-red-500"
+                      : "border-gray-300"
+                  } px-3 py-2 text-gray-900 shadow-sm outline-none focus:ring-indigo-500 sm:text-sm`}
+                  onChange={handleChange}
+                  value={password}
                 />
               </div>
             </div>
@@ -97,13 +124,23 @@ const Signup = () => {
               <div className="mt-1">
                 <input
                   id="confirm-password"
-                  name="confirm-password"
+                  name="confirmPassword"
                   type="password"
-                  //   autocomplete="new-password"
                   required
-                  className="block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  className={`block w-full rounded-md border ${
+                    password !== confirmPassword
+                      ? "border-2 border-red-500"
+                      : "border-gray-300"
+                  } px-3 py-2 text-gray-900 shadow-sm outline-none focus:ring-indigo-500 sm:text-sm`}
+                  onChange={handleChange}
+                  value={confirmPassword}
                 />
               </div>
+              {password !== confirmPassword && (
+                <p className="mt-2 text-sm text-red-600">
+                  Passwords do not match
+                </p>
+              )}
             </div>
 
             {/* <!-- Submit Button --> */}

@@ -59,7 +59,7 @@ const Products = () => {
                 <p className="mb-4 text-gray-600">${price}</p>
                 <div className="flex justify-between">
                   <button
-                    className="w-28 rounded bg-green-500 px-4 py-2 text-center text-white hover:bg-green-600"
+                    className="w-28 rounded bg-red-500 px-4 py-2 text-center text-white hover:bg-red-600"
                     onClick={() => addProductToCart(product)}
                   >
                     Buy Now

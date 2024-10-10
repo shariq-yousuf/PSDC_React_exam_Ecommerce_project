@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-  const createUser = (e: FormEvent<HTMLFormElement>) => {
+  const logInUser = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     localStorage.setItem("token", "true");
     navigate("/");
@@ -25,7 +25,7 @@ const Login = () => {
         </div>
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <form className="space-y-6" onSubmit={createUser}>
+          <form className="space-y-6" onSubmit={logInUser}>
             {/* <!-- Email Field --> */}
             <div>
               <label
