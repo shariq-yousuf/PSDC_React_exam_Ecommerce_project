@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Login = () => {
   const navigate = useNavigate();
   const createUser = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -11,7 +11,7 @@ const Signup = () => {
 
   return (
     <div className="flex min-h-screen">
-      {/* <!-- Left side: Signup Form --> */}
+      {/* <!-- Left side: Login Form --> */}
       <div className="flex w-full flex-col justify-center bg-white px-6 py-12 lg:w-1/2 lg:px-12">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
@@ -120,12 +120,12 @@ const Signup = () => {
           {/* <!-- Additional Link --> */}
           <p className="mt-6 text-center text-sm text-gray-500">
             Already have an account?
-            <Link
-              to="/login"
+            <a
+              href="#"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               Sign in
-            </Link>
+            </a>
           </p>
         </div>
       </div>
@@ -151,4 +151,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

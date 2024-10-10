@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const logOut = () => {
     localStorage.clear();
-    navigate("/");
+    navigate("/signup");
   };
 
   return (

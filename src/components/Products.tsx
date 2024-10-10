@@ -67,7 +67,6 @@ const Products = () => {
                   <Link
                     to={id.toString()}
                     className="w-28 rounded text-center bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-                    onClick={() => addProductToCart(product)}
                   >
                     Details
                   </Link>

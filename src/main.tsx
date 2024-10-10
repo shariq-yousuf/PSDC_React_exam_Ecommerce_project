@@ -10,6 +10,7 @@ import ProtectedRoutes from "./components/ProtectedRoutes.tsx";
 import { Provider } from "react-redux";
 import { store } from "./store/store.ts";
 import Cart from "./pages/Cart.tsx";
+import Login from "./pages/Login.tsx";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
