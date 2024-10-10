@@ -1,15 +1,16 @@
-import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { RootState } from "../store/store";
+import { useSelector } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
+import { RootState } from "../store/store"
+import { FaCartShopping } from "react-icons/fa6"
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const cart = useSelector((state: RootState) => state.cart.cart);
+  const navigate = useNavigate()
+  const cart = useSelector((state: RootState) => state.cart.cart)
 
   const logOut = () => {
-    localStorage.clear();
-    navigate("/login");
-  };
+    localStorage.clear()
+    navigate("/login")
+  }
 
   return (
     <nav className="flex flex-wrap items-center justify-between bg-gray-600 px-6 py-3">
@@ -41,12 +42,12 @@ const Navbar = () => {
             Shop
           </Link>
         </div>
-        <div>
+        <div className="flex items-center">
           <Link
             to={"/cart"}
-            className="mt-4 me-4 inline-block rounded border border-gray-400 px-4 py-2 text-sm leading-none text-gray-300 hover:bg-gray-300 hover:text-gray-800 lg:mt-0"
+            className="me-4 flex items-center rounded border border-gray-400 px-4 text-sm leading-none text-gray-300 hover:bg-gray-300 hover:text-gray-800 lg:mt-0"
           >
-            Cart
+            <FaCartShopping className="my-2" />
             {cart.length > 0 && (
               <span className="text-white bg-red-400 rounded-lg  ms-2 p-1">
                 {cart.length}
@@ -62,7 +63,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
