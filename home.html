@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>E-Commerce App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav
+      class="flex flex-wrap items-center justify-between bg-gray-600 px-6 py-3"
+    >
+      <div class="mr-6 flex flex-shrink-0 items-center text-white">
+        <img
+          class="mx-auto h-10 w-auto"
+          src="https://baitussalam.org/images/logo-2.svg"
+          alt="Your Company"
+        />
+      </div>
+      <div class="block lg:hidden">
+        <button
+          class="flex items-center rounded border border-gray-500 px-3 py-2 text-gray-400 hover:border-white hover:text-white"
+        >
+          <svg
+            class="h-3 w-3 fill-current"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div class="block w-full flex-grow lg:flex lg:w-auto lg:items-center">
+        <div class="text-sm lg:flex-grow">
+          <a
+            href="#"
+            class="mr-4 mt-4 block text-gray-300 hover:text-white lg:mt-0 lg:inline-block"
+            >Docs</a
+          >
+          <a
+            href="#"
+            class="mr-4 mt-4 block text-gray-300 hover:text-white lg:mt-0 lg:inline-block"
+            >Examples</a
+          >
+          <a
+            href="#"
+            class="mt-4 block text-gray-300 hover:text-white lg:mt-0 lg:inline-block"
+            >Blog</a
+          >
+        </div>
+        <div>
+          <button
+            class="mt-4 inline-block rounded border border-gray-400 px-4 py-2 text-sm leading-none text-gray-300 hover:bg-gray-300 hover:text-gray-800 lg:mt-0"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-[#F4F4F4]">
+      <div class="mx-auto max-w-3xl px-3 py-5 text-center md:py-10">
+        <h1
+          class="text-3xl font-semibold leading-tight text-[#1E1E1E] md:text-[40px]"
+        >
+          All-in-One E-commerce App
+        </h1>
+        <h2 class="mt-5 text-lg font-medium text-[#1E1E1E]">
+          Discover premium products and enjoy shopping with us. Risk Free
+          Shopping!
+        </h2>
+      </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="container mx-auto bg-white p-6">
+      <h1 class="mb-6 text-3xl font-bold text-gray-800">Featured Products</h1>
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Product Card 1 -->
+        <div class="boder-green-200 overflow-hidden rounded-lg border bg-white">
+          <img
+            class="h-48 w-full object-cover"
+            src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+            alt="Product 1"
+          />
+          <div class="p-4">
+            <h3 class="mb-2 text-lg font-semibold text-gray-800">
+              Premium Jacket
+            </h3>
+            <p class="mb-4 text-gray-600">$99.99</p>
+            <button
+              class="w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="boder-green-200 overflow-hidden rounded-lg border bg-white">
+          <img
+            class="h-48 w-full object-cover"
+            src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+            alt="Product 2"
+          />
+          <div class="p-4">
+            <h3 class="mb-2 text-lg font-semibold text-gray-800">
+              Stylish Backpack
+            </h3>
+            <p class="mb-4 text-gray-600">$49.99</p>
+            <button
+              class="w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+        <!-- Product Card 3 -->
+        <div class="boder-green-200 overflow-hidden rounded-lg border bg-white">
+          <img
+            class="h-48 w-full object-cover"
+            src="https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg"
+            alt="Product 3"
+          />
+          <div class="p-4">
+            <h3 class="mb-2 text-lg font-semibold text-gray-800">
+              Classic Shoes
+            </h3>
+            <p class="mb-4 text-gray-600">$79.99</p>
+            <button
+              class="w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="relative z-50 bg-[#191F33]">
+      <div class="flex flex-col items-center px-4 py-12">
+        <div>
+          <a
+            class="mb-8 flex items-center justify-center gap-5 text-white"
+            href="/"
+          >
+            <img
+              alt="Logo"
+              style="color: transparent"
+              width="50"
+              src="https://baitussalam.org/images/logo-2.svg"
+            />
+            <span class="text-3xl font-semibold tracking-wider"
+              >Bait-us-Salam</span
+            >
+          </a>
+          <p class="max-w-xl text-center text-lg font-medium text-white">
+            Shop Today!
+          </p>
+        </div>
+      </div>
+      <div class="bg-[#2E3447]">
+        <div class="px-3 py-3 text-center">
+          <span class="text-[#767E94]"
+            >Coded with 💙 by<!-- -->
+            <a
+              href="https://www.linkedin.com/in/abdulbasitprofile/"
+              target="_blank"
+              class="text-white"
+            >
+              Abdul Basit </a
+            >in Karachi
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
