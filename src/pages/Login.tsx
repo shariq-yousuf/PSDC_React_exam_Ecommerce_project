@@ -1,5 +1,5 @@
 import { FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,32 +20,12 @@ const Login = () => {
             alt="Your Company"
           />
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            Sign up for your account
+            Sign In
           </h2>
         </div>
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <form className="space-y-6" onSubmit={createUser}>
-            {/* <!-- Name Field --> */}
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Your Name
-              </label>
-              <div className="mt-1">
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  //   autocomplete="name"
-                  required
-                  className="block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
-              </div>
-            </div>
-
             {/* <!-- Email Field --> */}
             <div>
               <label
@@ -86,46 +66,26 @@ const Login = () => {
               </div>
             </div>
 
-            {/* <!-- Confirm Password Field --> */}
-            <div>
-              <label
-                htmlFor="confirm-password"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Confirm Password
-              </label>
-              <div className="mt-1">
-                <input
-                  id="confirm-password"
-                  name="confirm-password"
-                  type="password"
-                  //   autocomplete="new-password"
-                  required
-                  className="block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
-              </div>
-            </div>
-
             {/* <!-- Submit Button --> */}
             <div>
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
-                Sign up
+                Sign in
               </button>
             </div>
           </form>
 
           {/* <!-- Additional Link --> */}
           <p className="mt-6 text-center text-sm text-gray-500">
-            Already have an account?
-            <a
-              href="#"
+            Don't have an account?{" "}
+            <Link
+              to="/signup"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
-              Sign in
-            </a>
+              Sign up
+            </Link>
           </p>
         </div>
       </div>
