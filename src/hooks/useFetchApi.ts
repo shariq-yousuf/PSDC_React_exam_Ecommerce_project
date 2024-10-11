@@ -1,8 +1,12 @@
 const useFetchApi = async (url: string) => {
-  const response = await fetch(url)
-  const data = await response.json()
+  try {
+    const response = await fetch(url)
+    const data = await response.json()
 
-  return data
+    return data
+  } catch (error) {
+    console.error("Fetch error:", error)
+  }
 }
 
 export default useFetchApi
