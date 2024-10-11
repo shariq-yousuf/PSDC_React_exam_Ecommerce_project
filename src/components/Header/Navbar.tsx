@@ -1,16 +1,16 @@
-import { useSelector } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
-import { RootState } from "../store/store"
+import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import { RootState } from "../../state/store/store"
 import { FaCartShopping } from "react-icons/fa6"
+import BurgerMenu from "./BurgerMenu"
+import useLogout from "../../hooks/useLogout"
+import { toggle } from "../../state/slices/burgerMenuSlice"
 
 const Navbar = () => {
-  const navigate = useNavigate()
-  const cart = useSelector((state: RootState) => state.cart.cart)
-
-  const logOut = () => {
-    localStorage.clear()
-    navigate("/login")
-  }
+  const cart = useSelector((state: RootState) => state.cart)
+  const bugerMenu = useSelector((state: RootState) => state.burgerMenu)
+  const logout = useLogout()
+  const dispatch = useDispatch()
 
   return (
     <nav className="flex flex-wrap items-center justify-between bg-gray-600 px-6 py-3">
@@ -21,8 +21,13 @@ const Navbar = () => {
           alt="Your Company"
         />
       </div>
-      <div className="block md:hidden">
-        <button className="flex items-center rounded border border-gray-500 px-3 py-2 text-gray-400 hover:border-white hover:text-white">
+
+      {/* <!-- Mobile menu button --> */}
+      <div className="block lg:hidden">
+        <button
+          onClick={() => dispatch(toggle())}
+          className="flex items-center rounded border border-gray-500 px-3 py-2 text-gray-400 hover:border-white hover:text-white"
+        >
           <svg
             className="h-3 w-3 fill-current"
             viewBox="0 0 20 20"
@@ -33,11 +38,17 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
-      <div className="w-full hidden flex-grow md:flex md:w-auto md:items-center">
-        <div className="text-sm md:flex-grow">
+      {bugerMenu && (
+        <div className="fixed top-0 right-0 pt-4">
+          <BurgerMenu />
+        </div>
+      )}
+
+      <div className="w-full hidden flex-grow lg:flex lg:w-auto lg:items-center">
+        <div className="text-sm lg:flex-grow">
           <Link
             to={"/"}
-            className="mr-4 mt-4 block text-white hover:text-gray-300 text-lg md:mt-0 md:inline-block"
+            className="mr-4 mt-4 block text-white hover:text-gray-300 text-lg lg:mt-0 lg:inline-block"
           >
             Shop
           </Link>
@@ -56,7 +67,7 @@ const Navbar = () => {
           </Link>
           <button
             className="mt-4 inline-block rounded border border-gray-400 px-4 py-2 text-sm leading-none text-gray-300 hover:bg-gray-300 hover:text-gray-800 lg:mt-0"
-            onClick={logOut}
+            onClick={() => logout()}
           >
             Logout
           </button>

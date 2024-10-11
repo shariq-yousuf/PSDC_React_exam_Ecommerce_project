@@ -1,7 +1,7 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import Hero from "./Hero";
+import { Outlet } from "react-router-dom"
+import Navbar from "./Header/Navbar"
+import Footer from "./Footer/Footer"
+import Hero from "./Header/Hero"
 
 const Layout = () => {
   return (
@@ -11,7 +11,7 @@ const Layout = () => {
       <Outlet />
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

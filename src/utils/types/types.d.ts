@@ -1,10 +1,10 @@
-interface Product {
+interface ProductType {
   id: number
   title: string
-  price: number;
+  price: number
   description: string
   category: string
   image: string
 }
 
-export {Product}
+export { ProductType }

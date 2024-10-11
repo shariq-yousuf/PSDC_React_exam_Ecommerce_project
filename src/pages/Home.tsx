@@ -1,11 +1,11 @@
-import Products from "../components/Products";
+import AllProducts from "../components/Main/AllProducts"
 
 const Home = () => {
   return (
     <main>
-      <Products />
+      <AllProducts />
     </main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

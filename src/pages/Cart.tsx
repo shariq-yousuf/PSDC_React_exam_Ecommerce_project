@@ -1,19 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store/store";
-import { removeFromCart } from "../slices/cartSlice";
-import { removeCost } from "../slices/costSlice";
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from "../state/store/store"
+import { removeFromCart } from "../state/slices/cartSlice"
+import { removeCost } from "../state/slices/costSlice"
 
 const Cart = () => {
-  const cart = useSelector((state: RootState) => state.cart.cart);
-  const subTotal = useSelector((state: RootState) => state.cost.subtotal);
-  const dispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.cart)
+  const subTotal = useSelector((state: RootState) => state.cost.subtotal)
+  const dispatch = useDispatch()
 
-  const shippingCost = 5.0 * cart.length;
+  const shippingCost = 5.0 * cart.length
 
   const removeProductFromCart = (id: string, price: number) => {
-    dispatch(removeFromCart(id));
-    dispatch(removeCost(price));
-  };
+    dispatch(removeFromCart(id))
+    dispatch(removeCost(price))
+  }
 
   if (!cart.length) {
     return (
@@ -21,7 +21,7 @@ const Cart = () => {
         <h1 className="mb-6 text-3xl font-bold text-gray-800">Shopping Cart</h1>
         <p className="text-gray-600">Your cart is empty.</p>
       </div>
-    );
+    )
   }
 
   return (
@@ -92,7 +92,7 @@ const Cart = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

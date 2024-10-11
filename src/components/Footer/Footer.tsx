@@ -7,12 +7,7 @@ const Footer = () => {
             className="mb-8 flex items-center justify-center gap-5 text-white"
             href="/"
           >
-            <img
-              alt="Logo"
-              //   style="color: transparent"
-              width="50"
-              src="/react.svg"
-            />
+            <img alt="Logo" width="50" src="/react.svg" />
             <span className="text-3xl font-semibold tracking-wider">
               Ecommerce Store
             </span>
