@@ -2,11 +2,12 @@ import { useEffect, useState } from "react"
 import API_URL from "../../config/api"
 import Product from "./Product"
 import { ProductType } from "../../utils/types/types"
-import addProductToCart from "../../utils/functions/addProductToCart"
 import getData from "../../utils/functions/getData"
+import useAddToCart from "../../hooks/useAddToCart"
 
 const Products = () => {
   const [productsData, setProductsData] = useState([])
+  const addProductToCart = useAddToCart()
 
   useEffect(() => {
     getData(API_URL, setProductsData)

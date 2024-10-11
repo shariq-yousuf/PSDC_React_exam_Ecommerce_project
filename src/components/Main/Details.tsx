@@ -1,8 +1,9 @@
-import addProductToCart from "../../utils/functions/addProductToCart"
+import useAddToCart from "../../hooks/useAddToCart"
 import { ProductType } from "../../utils/types/types"
 
 const Details = ({ product }: { product: ProductType }) => {
   const { title, image, price, description, category } = product
+  const addProductToCart = useAddToCart()
 
   return (
     <div className="container mx-auto max-w-6xl p-6">
