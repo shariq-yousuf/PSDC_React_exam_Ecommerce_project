@@ -36,8 +36,7 @@ const CreateUser = () => {
   return (
     <div className="flex w-full flex-col justify-center bg-white px-6 py-12 lg:w-1/2 lg:px-12">
       <Logo text="Sign up for your account" />
-      <div className="mt-8 sm:mx-auto sm:w
-      -full sm:max-w-md">
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <form className="space-y-4" onSubmit={createUser}>
           {/* <!-- Name Field --> */}
           <Input
