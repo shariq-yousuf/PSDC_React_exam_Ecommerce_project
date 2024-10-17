@@ -22,7 +22,7 @@ const Footer = () => {
           <span className="text-[rgb(118,126,148)]">
             Coded with 💙 by{" "}
             <a
-              href="https:shariq-dev.netlify.app"
+              href="https://shariq-dev.netlify.app"
               target="_blank"
               className="text-white"
             >
